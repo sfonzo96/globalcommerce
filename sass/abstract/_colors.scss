@@ -1,0 +1,30 @@
+/* pcolor = plain color/primary */
+
+$gtpalette: (
+    'primary': #324874,
+    'primary-light': lighten(#324874, 15%),
+    'primary-dark': darken(#324874, 15%),
+    'secondary': #448cb3,
+    'btn-border':#1d2a43,
+    'facebook': #3b5998,
+    'whatsapp': #25d366,
+    'outlook': #0072C6,
+    'pwhite': #fff,
+    'white-secondary': #e4e5ee,
+    'pblack': #000,
+    'grey-bg': #404246,
+    'grey-shadow': #3c3c5d54,
+);
+
+/* 
+
+$color-primary: #324874;
+$color-secondary: #448cb3;
+$color-pwhite: #fff;
+$color-white-primary: #e4e5ee;
+$color-pblack: #000;
+$color-grey-bg: #404246;
+$color-facebook: #3b5998;
+$color-whatsapp: #25d366;
+$color-outlook: #0072C6; 
+*/

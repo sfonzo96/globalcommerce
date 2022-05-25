@@ -1,0 +1,141 @@
+@use "../abstract/index" as abs;
+
+main.main__productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin: auto 0 0 0;
+    height: 100%;
+    min-height: max-content;
+    padding: 2rem;
+
+    #main__section-allprod {
+        padding: 10rem 0;
+    }
+
+    & > .container-fluid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 1rem 2rem;
+        background-color:  abs.color(white-secondary);
+
+        color: abs.color(primary);
+
+        h1 {
+            margin: 2rem 0;
+            text-align: center;
+            
+            font-size: 3rem;
+            font-weight: bold;
+
+            .grid-productos {
+                margin: 2rem 0 !important; /* Para poder sobreescribir la clase row de línea 29, que sobreescribió a la original de bootstrap */
+            }
+        }
+
+        .dropdown {
+            display: flex;
+            justify-content: center;
+
+            margin: 1rem 0;
+            width: fit-content;
+
+            button {        
+                background-color: abs.color(pwhite);
+
+                color: abs.color(primary-dark);
+                font-size: calc(1rem + .5vw);
+
+                &.btn-secondary:focus {
+                    box-shadow: 0 0 0 .1rem abs.color(primary-dark);
+                }
+            }
+
+            ul {
+                width: 100%;
+                padding: 0;
+
+                border: .2rem solid abs.color(primary);
+
+                transition: all 100ms ease;
+                
+                a {
+                    @include abs.prod-ul-btn;
+                    color: abs.color(primary-dark);
+
+                    &:hover {
+                        color: abs.color(pwhite);
+                        background-color: abs.color(secondary);
+                    }
+                }
+            }
+        }
+
+        .container-fluid {
+            padding: 0;
+            
+            & > div {
+                display: flex;
+
+                margin: 1rem 0;
+                padding: 0 1rem;
+                justify-items: center;
+                background-color: transparent;
+
+                div {
+                    display: flex;
+
+                    width: 100%;
+                    padding: 1rem 2rem;
+                    justify-content: space-between;
+                    background-color: abs.color(pwhite);
+                    border: .1rem solid abs.color(btn-border);
+                    border-radius: .5rem;
+
+                    transition: all 50ms ease;
+                    
+                    &:hover {
+                        transform: scale(1.02);
+                        box-shadow: .4rem .4rem .4rem abs.color(grey-shadow)    ;
+                    }
+
+                    img {
+                        width: clamp(7rem,40%,10rem);
+                    }
+                    
+                    p {
+                        display: flex;
+                        align-items: center;
+
+                        margin: auto;
+                        text-align: center;
+                        
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        h2 {
+            margin: 2rem 0;
+            width: 100%;
+            padding: 0 1rem;
+            text-align: center;
+
+            .main__prod-cataloguelink {
+                color: abs.color(primary);
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

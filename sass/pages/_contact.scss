@@ -1,0 +1,233 @@
+@use "../abstract/index" as abs;
+
+main.main__contacto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    height: 100%;
+    min-height: max-content;
+    padding: 2rem;
+
+
+    .container-fluid {
+        display:flex; 
+        
+        height:100%;
+        width: 100%;
+        padding: 0;
+
+        background-color: abs.color(pwhite);
+
+        color:  abs.color(primary);
+        font-size: 1.5rem;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .main__form {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        padding: 2rem;
+
+        & > * {
+            margin: 2rem 0;
+        }
+
+        .form-control {
+            background: transparent;
+            border: none;
+            border-bottom: .3rem solid  abs.color(primary);
+
+            font-size: 1.25rem;
+
+            transition: all 400ms ease;
+            
+            &:focus {
+                outline: none;
+                border-bottom-color:  abs.color(secondary);
+                box-shadow: none;
+            }
+        }
+
+        div {
+            textarea {
+                height: 10rem;
+
+                resize: none;
+            }
+        }
+
+        .submit-button {
+            position: relative;
+            align-self: center;
+            @include abs.submit-btn;
+
+            &:hover {
+                background: abs.color(primary-light);
+            }
+
+            &:active {
+                top:.1rem;
+            }
+        }
+    }
+
+    .main__div-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        position: relative;
+
+        padding: 2rem;
+        background-color:  abs.color(white-secondary);
+
+        & > * {
+            margin: 2rem 0;
+        }
+
+        h2 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        div {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            margin: auto;
+            min-width: 80%;
+
+            font-size: 5rem;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+
+                margin-bottom: 1rem;
+                width: 8rem;
+                height: 8rem;
+                border-radius: 50%;                    
+
+                transition: all 150ms ease;
+                cursor: pointer;
+
+                &:hover {
+                    color:  abs.color(pwhite);
+
+                    .icon-tooltip {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translate(-50%, -150%);
+                    }
+                }
+
+                &:active {
+                    box-shadow: 0 .1rem .3rem abs.color(grey-shadow) inset;
+                }
+
+                &.i {
+
+                    &-fb {
+                        background-color: abs.color(facebook);
+
+                        color: abs.color(pwhite);
+
+                        .icon-tooltip-fb {
+                            background: abs.color(facebook);
+
+                            color: abs.color(pwhite);
+                        
+                            &::after {
+                              border-top-color: abs.color(facebook);
+                            }
+                        }
+                    }
+
+                    &-wa {
+                        background-color: abs.color(whatsapp);
+
+                        color: abs.color(pwhite);
+
+                        .icon-tooltip-wa {
+                            background: abs.color(whatsapp);
+
+                            color: abs.color(pwhite);
+                        
+                            &::after {
+                              border-top-color: abs.color(whatsapp);
+                            }
+                        }
+                    }
+                    
+                    &-em {
+                        background-color: abs.color(outlook);
+
+                        color: abs.color(pwhite);
+
+                        .icon-tooltip-em {
+                            background: abs.color(outlook);
+
+                            color: abs.color(pwhite);
+                        
+                            &::after {
+                              border-top-color: abs.color(outlook);
+                            }
+                        }
+                    }   
+                }
+
+                .icon-tooltip {
+                    display: block;
+
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    z-index: abs.$z-index-ttip;
+
+                    padding: .8rem 1rem;
+                    border-radius: 4rem;
+                    text-align: center;
+
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+
+                    opacity: 0;
+                    pointer-events: none;
+                    transform: translate(-50%, -100%);
+                    transition: all .3s ease;
+                    
+                    &::after {
+                        content: "";
+                        display: block;
+
+                        position: absolute;
+                        bottom: .1rem;
+                        left: 50%;
+
+                        width: 0;
+                        height: 0;
+                        border: solid transparent;
+                        border-width: 1rem 1rem 0 1rem;
+
+                        transform: translate(-50%, 100%);
+                    }
+
+                }
+            }
+        }
+    }
+}

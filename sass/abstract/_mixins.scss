@@ -1,0 +1,21 @@
+@use "./colors" as c;
+
+@mixin prod-ul-btn {
+
+    width: 100%;
+
+    font-size: calc(1rem + 0.5vw);
+}
+
+@mixin submit-btn {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    background: map-get(c.$gtpalette, primary-light);
+    border: 0.3rem solid map-get(c.$gtpalette, primary-dark);
+    border-radius: 50px;
+
+    color:  map-get(c.$gtpalette, pwhite);
+    font-size: 2rem;
+    
+    transition: all 1ms linear;
+}

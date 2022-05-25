@@ -1,0 +1,160 @@
+@use "../abstract/index" as abs;
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding-right: 0;
+    padding-left: 0;
+    background-color:  abs.color(primary);
+
+    color:  abs.color(pwhite);
+    font-size: clamp(1.1rem, 1.2rem, 1.6rem);
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    div.row {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer__div-empresa {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        padding: 1rem;
+
+        color:  abs.color(pwhite);
+
+        p {
+            padding: .75rem 0;
+            margin-bottom:  0;
+        }
+    }
+
+    .footer__div-menu {
+        display: flex;
+        justify-content: center;
+        
+        padding: 1rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            padding: 0;
+        }
+
+        div a {
+            padding: .75rem 0;
+        }
+
+    }
+
+    .footer__div-redes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 1rem;
+
+        .div__redes-i {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+
+                margin-bottom: 1rem;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;    
+                font-size: 3rem;
+
+                color: abs.color(pwhite);                
+
+                transition: all 150ms ease;
+                cursor: pointer;
+
+                &:hover {
+                    color:  abs.color(pwhite);
+
+                    .footer__tooltip {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translate(-50%, -150%);
+
+                        border: .1rem solid abs.color(pwhite);
+                    }
+                }
+
+                &:active {
+                    box-shadow: 0 .1rem .3rem abs.color(pblack) inset;
+                }
+
+                .footer__tooltip {
+                    display: block;
+
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    z-index: abs.$z-index-ttip;
+
+                    padding: .2rem .75rem;
+                    border-radius: 4rem;
+                    text-align: center;
+
+                    font-size: .9rem;
+                    text-transform: uppercase;
+
+                    opacity: 0;
+                    pointer-events: none;
+                    transform: translate(-50%, -100%);
+                    transition: all 300ms ease;
+                    
+                    &::after {
+                        content: "";
+                        display: block;
+
+                        position: absolute;
+                        bottom: -.1rem;
+                        left: 50%;
+
+                        width: 0;
+                        height: 0;
+                        border: solid transparent;
+                        border-width: .75rem .75rem 0 .75rem;
+                        border-top-color: abs.color(white-secondary);
+
+                        transform: translate(-50%, 100%);
+                    }
+                }  
+            }        
+        }   
+    }
+
+    .footer__div-copyright {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+
+        small {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,261 @@
+@use "./abstract/" as abs;
+@use "./layout/" as *;
+@use "./pages/" as *;
+
+/* Properties order: display stuff > positioning > box modelling > typography > object manipulation */
+/* Orden de propiedades: display > posicionamiento > formato de cajas general > tipografía > manipulación de objetos */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: abs.$font-primary;
+    font-weight: 100;
+    list-style: none;
+}
+
+.row {
+    margin: 0!important; /* Para estandarizar la clase row de bootstrap sin margen */
+}
+
+a {
+    color:  abs.color(pwhite);
+    text-decoration: none;
+
+    &:hover {
+        color:  abs.color(pwhite);
+    }
+}
+
+html {
+    height: 100%;
+
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    background-color:  abs.color(grey-bg);
+}
+
+@media only screen and (max-width:360px) {
+
+    main.main__contacto {
+
+        .container-fluid {
+            width: 100%;
+        }
+
+        .main__div-social{
+            padding: 1rem;
+        }
+    }
+    
+}
+
+@media only screen and (max-width:470px) {
+    
+    main.main__index section.container-fluid .main__section-h1 {
+        font-size: clamp(1.8rem, 1.8rem + 1vw, 2.2rem);
+    }
+
+    main.main__contacto .main__div-social div {
+        width: 100%;
+        justify-content: space-around;
+
+        a {
+            width: clamp(5rem, 4rem + 1vw, 6.5rem);
+            height: clamp(5rem, 4rem + 1vw, 6.5rem);
+            font-size: 4rem;
+            margin: 0;
+
+            & > i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+
+                width: clamp(5rem, 4rem + 1vw, 6.5rem);
+                height: clamp(5rem, 4rem + 1vw, 6.5rem);
+
+                &::before {
+                    position: absolute;
+                }
+            }
+
+            &:hover {
+                .icon-tooltip {
+                    display: none;
+                }
+            }
+
+        } 
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    main.main__index .carousel .carousel-item {
+
+        div {
+            grid-template-columns: .75fr;
+            grid-template-rows: repeat(3, 1fr);
+            row-gap: 1.5rem;
+            justify-content: center;
+
+            width: 100%;
+            padding: 2rem 2rem;
+        }
+    }        
+}
+
+@media only screen and (max-width: 768px) {
+    
+    header {
+        .container-fluid {
+            padding: 0;
+
+            .navbar-brand {
+                margin: 0;
+                padding: 0;
+                padding-left: 2rem;
+            }
+
+            button {
+                margin-right: 2rem;
+            }
+
+            div {
+                width: 100%;
+            }
+
+        }
+
+        .navbar-nav {
+            margin: 0;
+        }
+
+        .navbar-light .navbar-nav {
+            
+            width: 100%;
+            height: 100%;
+
+            a {
+                background-color: abs.color(pwhite);
+            }
+        }
+
+        .navbar-light .navbar-nav .nav-item {
+            margin: 0;
+            width: 100%;
+
+            outline: .1rem solid  abs.color(primary);
+            
+            .nav-link {
+                height: max-content;
+                width: 100%;
+                padding: 1rem 0rem;
+                background-color: abs.color(pwhite);
+
+                color:  abs.color(primary);
+
+                &:hover {
+                    background-color:  abs.color(secondary);
+                    border-radius: 0;
+
+                    color:  abs.color(pwhite);
+
+                    transform: none;
+                }
+            }
+        }
+
+        .navbar-collapse {
+            position: absolute;
+            top: 7rem;
+        }
+
+        .dropdown-menu {
+            border: none;
+            
+            &::before {
+                display: none;
+            }
+        }
+
+        .dropdown-menu.show {  
+            outline: .1rem solid  abs.color(primary);
+            border-radius: 0;
+
+            transform: none;
+        }
+    }
+
+    main {
+        position: relative;
+    }
+
+    main.main__contacto .main__div-social {
+
+        h2 {
+            position: relative;
+        }
+        
+        div {
+            margin: 3rem 0;
+
+            a {
+                &:hover {
+                    .icon-tooltip {
+                        transform: translate(-50%, -220%);
+                    }
+                }
+            }
+        }
+    }
+
+    main.main__productos .container-fluid {
+        padding: 1rem 0;
+    }
+
+    main.main__globaltrading .container-fluid div {
+        flex-direction: column;
+
+        iframe {
+            width: 85%;
+        }
+    }
+
+    footer{
+        .footer__div-empresa {
+            & > * {
+                display: flex;
+    
+                justify-content: center;
+            }
+    
+            h2 {
+                text-align: center;
+            }
+        }
+    
+        .footer__div-menu div {
+            a.div__menu-items, h2.div__menu-items {
+                display: flex;
+                
+                justify-content: center;
+            }
+        }
+    
+        .footer__div-redes .div__redes-i {
+            padding: 3rem 1rem;
+        }
+    }
+
+}

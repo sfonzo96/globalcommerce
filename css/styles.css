@@ -852,10 +852,10 @@ body {
     padding: 1rem 0;
   }
 
-  main.main__globaltrading .container-fluid div {
+  main.main__globalcommerce .container-fluid div {
     flex-direction: column;
   }
-  main.main__globaltrading .container-fluid div iframe {
+  main.main__globalcommerce .container-fluid div iframe {
     width: 85%;
   }
 

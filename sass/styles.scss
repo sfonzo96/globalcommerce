@@ -232,7 +232,7 @@ body {
         }
     }
 
-    footer{
+    footer.container-fluid {
         .footer__div-empresa {
             & > * {
                 display: flex;
@@ -251,10 +251,14 @@ body {
                 
                 justify-content: center;
             }
+            
+            a{
+                padding: .75rem 0;
+            }
         }
     
         .footer__div-redes .div__redes-i {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
         }
     }
 

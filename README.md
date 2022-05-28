@@ -13,7 +13,7 @@
  - HTML (Hyper Text Markup Language)
  - CSS (Cascading Style Sheets)
  - SASS (Syntactically Awsome Style Sheets)
- - Bootstrap v5.2 framework
+ - Bootstrap v5.1 framework
  - Servicio de hosting gratuito: Netlify
 
 ## Futuras actualizaciones que me gustaría agregar 

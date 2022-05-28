@@ -8,11 +8,13 @@
 
 ## Objetivo 
  El objetivo final de este proyecto fue desarrollar mi primera página web a lo largo del curso y aplicar los conocimientos adquiridos en el transcurso para tener un resultado lo más óptimo posible.
-## Tecnologías aplicadas:
+ 
+## Tecnologías aplicadas en el desarrollo:
  - HTML (Hyper Text Markup Language)
  - CSS (Cascading Style Sheets)
  - SASS (Syntactically Awsome Style Sheets)
  - Bootstrap v5.2 framework
+ - Servicio de hosting gratuito: Netlify
 
 ## Futuras actualizaciones que me gustaría agregar 
  - Incorporar funcionalidad de envío/recepción al formulario

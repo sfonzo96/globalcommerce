@@ -14,7 +14,7 @@
  - CSS (Cascading Style Sheets)
  - SASS (Syntactically Awsome Style Sheets)
  - Bootstrap v5.1 framework
- - Servicio de hosting gratuito: Netlify
+ - Servicio de hosting gratuito: Netlify (puede visualizarse el sitio en globalcomproyect.netlify.app)
 
 ## Futuras actualizaciones que me gustaría agregar 
  - Incorporar funcionalidad de envío/recepción al formulario
